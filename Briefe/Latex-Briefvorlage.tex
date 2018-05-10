@@ -57,6 +57,7 @@
 % deswegen hyperref. Option hidelinks versteckt farbige Umrandungen.
 \usepackage[hidelinks]{hyperref}
 
+\usepackage{brief}
 
 
 \begin{document}
@@ -71,13 +72,13 @@
 
 
 % Absendername
-\setkomavar{fromname}{Rainer Fritsch}
+\setkomavar{fromname}{\name}
 
 % Absenderadresse
-\setkomavar{fromaddress}{Sonnenstr. 2\\85609 Aschheim}
+\setkomavar{fromaddress}{\anschrift}
 
 % Absendertelefonnummer
-\setkomavar{fromphone}{+49 89 95958044}
+\setkomavar{fromphone}{\telefon}
 
 % Absenderfax
 % (oben fromfax=true setzen)
@@ -85,24 +86,24 @@
 
 % Absender-E-Mail-Adresse
 % der erste Paremeter ist fürs Klicken, der zweite wird angezeigt/gedruckt
-\setkomavar{fromemail}{\href{mailto:mail@rainerfritsch.de}{mail@rainerfritsch.de}}
+\setkomavar{fromemail}{\href{mailto:\mail}{\mail}}
 
 % Absender-URL
 % (oben fromurl=true setzen)
 % eckige Klammern entfernen damit "URL:" erscheint oder dort Alternativtext eintragen
 % der erste Parameter ist fürs Klicken, der zweite wird angezeigt/gedruckt
-\setkomavar{fromurl}[]{\href{http://www.rainerfritsch.de}{rainerfritsch.de}}
+\setkomavar{fromurl}[]{\href{http://\web}{\web}}
 
 
 
 % Ort beim Datum
-\setkomavar{place}{Aschheim}
+\setkomavar{place}{\absendeort}
 
 % Datum
-\setkomavar{date}{\today}
+\setkomavar{date}{\absendedatum}
 
 % Betreff
-\setkomavar{subject}{Kündigung}
+\setkomavar{subject}{\betreff}
 
 
 
@@ -118,18 +119,14 @@
 
 
 \begin{letter}{
-	Empfänger GmbH\\
-	Empfängerstraße 123\\
-	12345 Essen
+	\empfaenger
 }
 
-\opening{Sehr geehrte Damen und Herren,}
+\opening{\anrede}
 
-Loreß "`ipsum"' 200 € sit amet, consectetur adipiscing elit. Aliquam faucibus euismod nibh. Nulla condimentum, odio in vehicula bibendum, tellus libero varius sapien, vel aliquam elit mauris ut leo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla vitae dapibus felis, ut euismod lectus.
- 
-Vestibulum at auctor urna, in iaculis lectus. Nullam vitae magna metus. Praesent lacinia massa ac lobortis ullamcorper. Vestibulum laoreet, ligula ut tincidunt auctor, ligula lacus accumsan lectus, vitae aliquet justo diam et risus. Etiam suscipit magna vel velit tristique, quis egestas justo aliquam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum sit amet elementum lacus, ac nulla.
+\input{brief-inhalt.tex}
 
-\closing{Mit freundlichen Grüßen}
+\closing{\gruss}
 
 % Post Scriptum
 %\ps PS: Ich bin bis März nur telefonisch erreichbar.

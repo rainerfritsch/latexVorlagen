@@ -1,0 +1,49 @@
+\ProvidesFile{absender.lco}
+
+\KOMAoptions{%
+ fromemail=true,       % Email wird im Briefkopf angezeigt
+ fromphone=true,       % Telefonnumer wird im Briefkopf angezeigt
+ fromurl=false,         % URL wird im Briefkopf angezeigt
+% fromlogo=true,        % Logo wird im Briefkopf angezeigt
+locfield=wide,          % Breite Absenderergänzung (location)
+fromalign=left,         % Ausrichtung des Briefkopfes
+fromrule=afteraddress%  % Trennlinie unter dem Briefkopf
+}
+
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[ngerman]{babel}
+
+\setkomavar{fromname}{Max Mustermann} % Name
+\setkomavar{fromaddress}{% % Adresse
+  Musterstr. 1\\
+  50000 Musterstadt%
+}
+
+\setkomavar{fromemail}{muster@mail.de} % Email-Adresse
+\setkomavar{fromphone}{0\,30\,123456789} % Telefonnummer
+\setkomavar{fromurl}[Website:~]{www.max-mustermann.de} % Website
+
+% ===== Absenderergänzung =====
+\setkomavar{location}{%
+  \raggedright\footnotesize{%
+  \usekomavar{fromname}\\
+  \usekomavar{fromaddress}\\
+  \usekomavar*{fromphone}\usekomavar{fromphone}\\
+  \usekomavar*{fromemail}\usekomavar{fromemail}
+  %\usekomavar*{fromurl}\usekomavar{fromurl}
+  }%
+}
+% ============================
+
+% Logo
+% \setkomavar{fromlogo}{\includegraphics{logo.png}}
+
+% Die Bankverbindung wird nicht automatisch verwendet. Dazu muss bspw. mittels \firstfoot ein eigener Brieffuß definiert werden.
+\setkomavar{frombank}{}
+
+% ===== Signatur =====
+\setkomavar{signature}{%
+  \usekomavar{fromname}%
+}
+\renewcommand*{\raggedsignature}{\raggedright}
+% ====================

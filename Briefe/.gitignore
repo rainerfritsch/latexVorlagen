@@ -1,0 +1,5 @@
+# meine lco ausschließen
+absender.lco*
+*.pdf
+*.aux
+*.log
